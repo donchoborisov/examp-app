@@ -99,7 +99,9 @@ class Profile extends Component
           if(count($data)) {
             User::find($this->userId)->update($data);
             session()->flash('success', 'User profile has been successfully updated');
- 
+             
+          
+        
             return redirect(request()->header('Referer'));
           }
 

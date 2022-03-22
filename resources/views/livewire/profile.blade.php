@@ -44,7 +44,7 @@
           <form  wire:submit.prevent="save" enctype="multipart/form-data">@csrf
           <div class="{{ $errors->has('name') ? 'has-error' : '' }}">
          
-            <input wire:model="name" class="w-full ring-sec focus:ring-1 bg-gray-300 text-gray-900 mt-2 p-3  focus:outline-none focus:shadow-outline"
+            <input wire:model.defer="name" class="w-full ring-sec focus:ring-1 bg-gray-300 text-gray-900 mt-2 p-3  focus:outline-none focus:shadow-outline"
               type="text" name="name" placeholder="Name">
               <span class="text-red-700 bg-red-600 bg-opacity-20 text-xs  rounded">{{ $errors->first('name') }}</span>
           </div>
@@ -52,13 +52,13 @@
 
           <div class="mt-8">
     
-            <input wire:model="contact" class="w-full ring-sec focus:ring-1 bg-gray-300 text-gray-900 mt-2 p-3  focus:outline-none focus:shadow-outline"
+            <input wire:model.defer="contact" class="w-full ring-sec focus:ring-1 bg-gray-300 text-gray-900 mt-2 p-3  focus:outline-none focus:shadow-outline"
               type="text" name="contact" placeholder="Contact">
              
           </div>
           <div class="mt-8  {{ $errors->has('bio') ? 'has-error' : '' }}">
             <span class="uppercase font-title text-sm text-gray-600 font-bold">Bio</span>
-            <textarea wire:model="bio"
+            <textarea wire:model.defer="bio"
               class="w-full ring-sec focus:ring-1 h-32 bg-gray-300 text-gray-900 mt-2 p-3  focus:outline-none focus:shadow-outline" name="bio" ></textarea>
               
             </div>
